@@ -1,0 +1,27 @@
+<h2>Show notification</h2>
+
+<ul>
+
+  <li>
+    <strong>Message:</strong>
+    <%= @notification.message %>
+  </li>
+
+  <li>
+    <strong>Latitude:</strong>
+    <%= @notification.latitude %>
+  </li>
+
+  <li>
+    <strong>Longitude:</strong>
+    <%= @notification.longitude %>
+  </li>
+
+  <div
+    id="map"
+    data-latitude="<%= @notification.latitude %>"
+    data-longitude="<%= @notification.longitude %>"
+    data-marker-message="<%= @notification.message %>" >
+  </map>
+
+</ul>
