@@ -3,6 +3,8 @@ defmodule LocationMapBackend.Endpoint do
 
   socket "/socket", LocationMapBackend.UserSocket
 
+
+  plug Corsica, origins: "*", allow_headers: ~w(accept content-type)
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
