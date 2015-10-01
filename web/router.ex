@@ -21,8 +21,11 @@ defmodule LocationMapBackend.Router do
     get "/notifications/:id", NotificationController, :show
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", LocationMapBackend do
-  #   pipe_through :api
-  # end
+  scope "/api", LocationMapBackend do
+    pipe_through :api
+
+    scope "/v1", V1, as: :v1 do
+      post "/notifications", NotificationController, :create
+    end
+  end
 end
